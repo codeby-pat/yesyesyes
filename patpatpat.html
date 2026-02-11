@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PAYAG KANA PAYAG NAKO EH</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8c8dc;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+img {
+  width: 250px;
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #ff4d6d;
+}
+
+.buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.btn-yes {
+  background: #ff4d6d;
+  color: white;
+}
+
+.btn-no {
+  background: #ccc;
+}
+</style>
+</head>
+
+<body>
+
+<main class="container">
+  <img src="https://media.tenor.com/TUVAE2M_wz4AAAAi/chubby-tonton.gif" alt="cute gif">
+  
+  <p class="title">WILL YOU MY VALENTINE? </p>
+  
+  <div class="buttons">
+    <button class="btn-yes">Yes 💖</button>
+    <button class="btn-no">No 🥹</button>
+  </div>
+</main>
+
+<script>
+const yesBtn = document.querySelector(".btn-yes");
+const noBtn = document.querySelector(".btn-no");
+const title = document.querySelector(".title");
+
+let scale = 1;
+
+noBtn.addEventListener("click", () => {
+  scale += 0.2;
+  yesBtn.style.transform = `scale(${scale})`;
+});
+
+yesBtn.addEventListener("click", () => {
+  document.querySelector(".container").innerHTML = `
+    <img src="https://media.tenor.com/ACi1vdjNbpIAAAAi/peach-goma-love.gif">
+    <p class="title">Yay! I Love You!! 💖</p>
+  `;
+});
+</script>
+
+</body>
+</html>
